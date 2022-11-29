@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="icon" type="image/x-icon" href="img/icons8-room-64.png" />
+    <title>Error</title>
+</head>
+<body
+style=" display:flex;flex-direction:column;height:100vh;
+background: url(img/main_bg.png);
+    font-family: "Roboto", sans-serif;
+
+  background-position: 0px 0px;
+  background-repeat: random;
+  animation: animatedBackground 50s linear infinite alternate;
+}
+@keyframes animatedBackground {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 100% 0;
+    }">
+    {{>header}}
+    <div style="display: flex; width:100vw;align-items:center; flex-direction:column;">
+    <h1 style="margin-top:20px;margin-bottom:20px">PAGE NOT FOUND</h1>
+    <img width="300px" src="img/photo_2022-11-19_02-05-20.jpg" alt="404 PAGE NOT FOUND" width="500px">
+    </div>
+    {{>footer}}
+</body>
+</html>   

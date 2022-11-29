@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+background: url(../img/main_bg.png);
+font-family: "Roboto", sans-serif;
+background-position: 0px 0px;
+background-repeat: random;
+animation: animatedBackground 50s linear infinite alternate;
+}
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+.heading{
+    margin:20px 0px ;
+    display: flex;
+    justify-content: center;
+
+}
+.heading h1{
+    padding: 30px 0px ;
+}
+
+
+@media(max-width:792px){
+  .heading h1{
+      font-size:25px;
+  }
+}

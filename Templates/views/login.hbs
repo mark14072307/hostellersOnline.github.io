@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+        <link rel="icon" type="image/x-icon" href="img/icons8-room-64.png" />
+    <link rel="stylesheet" href="css/login_style.css" />
+  </head>
+  <body
+  style=" background: url(img/main_bg.png);">
+{{>header}}
+    <div class="container">
+      <form action="/users" method="get" class="login_form">
+        <h1>Login</h1>
+        <h3>Username/Email</h3>
+        <input type="text" name="Email" placeholder="Your Email" required />
+        <h3>Password</h3>
+        <input type="password" name="password" required placeholder="Password"/>
+
+<button type="submit">Login</button>
+        <a href="/signup">Create account</a>
+      </form>
+    </div>
+    <div style="visibility: hidden">
+      <img src="img/1.png" height="150px" alt="" />
+    </div>
+    {{>footer}}
+  </body>
+</html>

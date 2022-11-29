@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+        <link rel="icon" type="image/x-icon" href="img/icons8-room-64.png" />
+    <link rel="stylesheet" href="css/signup_style.css">
+  </head>
+  <body
+  style="display:flex;flex-direction:column;height:100vh;background: url(img/main_bg.png);">
+  {{>header}}
+    <div class="container">
+      <form action="/users" method="post" class="signup_form">
+        <h1>Signup</h1>
+        
+    <h3>Username/Email</h3>
+        <input type="text" name="Email" placeholder= "Your Email"value="{{email}}" required >
+        <h3>Password</h3>
+        <input onkeyup='check();' type="password" id ="password" name="password" placeholder="Password" required>
+         <h3>Confirm Password</h3>
+        <input type="password" id="confirm_password" placeholder="Password" required>
+     <button type="submit">Signup</button>
+       <p id='message'></p>
+       <p  id="invalid">{{invalid}}</p> 
+        <a href="/login">Already have an Account?</a>
+  </form></div>
+  {{>footer}}
+
+
+
+
+
+<script>
+  var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'Confirm Password matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'Confirm Password not matching';
+  }
+}
+</script>
+
+
+
+  </body>
+</html>
+

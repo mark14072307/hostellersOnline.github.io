@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+  
+    z-index: 1;
+    font-family: "Helvetica", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    background-position: 0px 0px;
+    background-repeat: random;
+    animation: animatedBackground 50s linear infinite alternate;
+  }
+
+
+
+  @keyframes animatedBackground {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 100% 0;
+    }
+  }
+
+  .container{
+    height: 80vh;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .container a{
+    margin: 20px 0px;
+    font-size: 18px;
+    padding: 7px 20px ;
+    border: 2px solid rgb(144, 46, 196) ;
+    border-radius: 6px ;
+    background-color: rgba(135, 70, 233, 0.405);
+  }

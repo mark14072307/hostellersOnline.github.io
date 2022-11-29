@@ -1,0 +1,147 @@
+@media (max-width: 952px) {
+  label.logo {
+    padding-left: 5px;
+    /* display: none; */
+  }
+  label.logo h1 {
+    font-size: 1.8rem;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 914px) {
+  #menu{
+    display: block;
+  }
+  label.logo {
+    padding-left: 30px;
+    line-height: 60px;
+  }
+  ul {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 60vw;
+    height: 80vh;
+    background-color: rgba(119, 36, 221, 0.971);
+    top: 0px;
+    left: -100%;
+    text-align: center;
+    transition: 0.4s ease-in-out;
+  }
+  
+  nav ul li {
+    display: block;
+    padding: 12px 0px;
+  }
+  #h{
+    margin-top: 84px;
+  }
+  .drop_btn {
+    display: none;
+  }
+  nav ul li a {
+    text-transform: capitalize;
+    font-size: 18px;
+  }
+  nav ul li a:hover {
+    background-color: rgba(153, 76, 247, 0);
+    color: #4701aa;
+  }
+  nav ul li a.active {
+    color: #4701aa;
+    background-color: rgba(153, 76, 247, 0);
+  }
+
+  #login {
+    text-transform: capitalize;
+    font-size: 18px;
+    background-color: rgba(153, 76, 247, 0);
+    padding: 0px;
+    margin-left: 0px;
+  }
+  #signup {
+    padding: 0px;
+    font-size: 18px;
+    border: none;
+    background-color: rgba(153, 76, 247, 0);
+  }
+  #signup:hover {
+    color: hsl(265, 99%, 34%);
+    text-decoration: underline;
+    background-color: #4701aa00;
+  }
+
+  #login:hover {
+    color: #4701aa;
+    text-decoration: underline;
+
+  }
+}
+
+
+
+
+@media (max-width:682px ) {
+  footer{
+    font-size: small;
+    padding: 10px 0px 30px 0px;
+  }
+.footer1{
+  text-align: center;
+
+  padding: 15px 0px;
+  width: 100vw;
+}
+.social{
+  padding:20px 0px ;
+  width: 100vw;
+  justify-content: center;
+
+}
+.contact{
+  text-align: center;
+}
+
+.hr{
+  display: block;
+  width: 100vw;
+  justify-content: center;
+  display: flex;
+}
+}
+
+
+@media (max-width:682px ) {
+  footer{
+    font-size: small;
+    padding: 10px 0px 30px 0px;
+  }
+.footer1{
+  text-align: center;
+
+  padding: 15px 0px;
+  width: 100vw;
+}
+.social{
+  padding:20px 0px ;
+  width: 100vw;
+  justify-content: center;
+
+}
+.contact{
+  text-align: center;
+}
+
+.hr{
+  display: block;
+  width: 100vw;
+  justify-content: center;
+  display: flex;
+}
+}
+

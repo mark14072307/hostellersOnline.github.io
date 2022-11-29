@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Comic+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hostellers.Online</title>
+    <link rel="stylesheet" type="text/css" href= "css/index.css" />
+        <link rel="icon" type="image/x-icon" href="img/icons8-room-64.png" />
+  </head>
+  <body style=" background: url(img/main_bg.png);">
+  {{>header}}
+    <div class="section">
+      <div class="container">
+        <h1 id="type"></h1>
+        <h2>Scroll Down</h2>
+        <div class="arrow bounce">
+          <a class="fa-solid fa-chevron-down href="#"></a>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container2">
+        <div>
+            <img
+              src="img/7732666_5293-removebg-preview.png"
+              alt="student"
+            />
+          </div>
+        <div class="quate">
+          <h1>Are you A Student?</h1>
+          <h2>Living outside of your home town for Study..</h2>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="section">
+        <div class="container2">
+            <div class="suffer_img1">
+                <img
+                  src="img/4782146-removebg-preview.png"
+                  alt="student"/>
+              </div>
+    
+         
+          <div class="quate">
+            <h1>Suffering by finding Perfect Rentals & Mess</h1>
+            <h2>Leave it to us</h2>
+          </div>
+          <div class="suffer_img2">
+            <img
+              src="img/4782146-removebg-preview.png"
+              alt="student"/>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container2">
+          <div>
+            <img
+              src="img/14230944_5437683-removebg-preview.png"
+              alt="student"
+            />
+          </div>
+          <div class="quate">
+            <h1>Give time to Study</h1>
+            <h2>We find Rentals And Mess For You</h2>
+            <br><br>
+            <h2>Go through following links</h2>
+       
+          </div>
+        </div>
+      </div >
+
+<div class="serve">
+  <div class="serve_item">
+<img id="rent" width="250px" src="img/rent.png" alt="rents">
+<h2>Rooms On Rent</h2>
+<a style="text-decoration: none;color:white" href="room.html" target="mid"><button class="buzz-out-on-hover">Find now<img src="img/icons8-linking-24.png" width="12px"></button></a>
+  </div>
+
+
+<div class="serve_item" style="padding:40px 50px">
+<img id="mess" width="220px" src="img/mess.png" alt="mess">
+<h2>Mess & Tiffins</h2>
+
+<a style="text-decoration: none;color:white" href="mess.html" target="mid"><button class="buzz-out-on-hover">Find now<img src="img/icons8-linking-24.png" width="12px"></button></a>
+  </div>
+
+</div>
+
+{{>footer}}
+
+<script>
+     var i = 0;
+      var txt = 'Welcome To Our Website'; /* The text */
+      var speed = 50; /* The speed/duration of the effect in milliseconds */
+      
+      function typeWriter() {
+        if (i < txt.length) {
+          document.getElementById("type").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+      window.onload = function() {
+        typeWriter ();
+};
+
+</script>
+     
+
+  </body>
+</html>
