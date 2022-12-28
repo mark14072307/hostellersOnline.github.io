@@ -17,7 +17,7 @@
 
 <div class="container-item">
 <p>Select Your College State </p>
-<select name="state" id="State" onchange="sendData(this)" >
+<select name="state" id="State" onchange="sendData(this.id,CityResult,)" >
 <option value="">Select State</option>
 </select>
 </div>
@@ -92,7 +92,11 @@ function sendData(e){
 
 
 
- 
+
+
+
+
+
 
 </script>
 </body>
