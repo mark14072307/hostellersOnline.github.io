@@ -2,7 +2,7 @@
 const mongoose = require("mongoose")
 
 // Connecting to the Database
-mongoose.connect('mongodb+srv://mark:ExB91aGQ0hO3mUzB@cluster0.3hqs5gl.mongodb.net/AICD?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://mark:ExB91aGQ0hO3mUzB@cluster0.3hqs5gl.mongodb.net/AICD',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // useCreateIndex :true, 
@@ -15,3 +15,4 @@ mongoose.connect('mongodb+srv://mark:ExB91aGQ0hO3mUzB@cluster0.3hqs5gl.mongodb.n
 
 
 
+// mongodb://localhost:27017/

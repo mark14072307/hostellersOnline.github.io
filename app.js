@@ -3,14 +3,16 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const hbs = require("hbs");
-require("./src/db/mongo")
-const Student = require("./src/models/user");
 const { Console } = require("console");
 const port = process.env.PORT || 8000;
 const bodyParser = require('body-parser'); // middleware
 const { body } = require("express-validator");
 app.use(bodyParser.urlencoded({ extended: false }));
+require("./src/db/mongo")
 const CD = require("./src/models/room")
+const Student = require("./src/models/user");
+require("./src/models/room")
+
 
 app.use(express.json())
 
@@ -82,45 +84,32 @@ app.post('/users', async (req, res) => {
   }
 })
 
+
 app.post("/getState", async (req, res) => {
   try {
     const result = await CD
-      .distinct("State_Name")
-    const states = JSON.stringify(result)
-    res.send(states)
+      .distinct("State")
+    // const states = JSON.parse(result)
+    res.send(result)
   }
   catch (e) {
     console.log(e)
   }
 })
 
+
 app.post("/getCity", async (req, res) => {
   try {
-    const payload = req.body.payload.trim();
-    const state = JSON.stringify(payload) 
-    // const getcities = async () => {
-      const cities = await CD.find({State_Name : state});
-    //   // console.log(cities)
-    //   console.log(state)
-    // }
-    // getcities(); 
-    // const cities = await CD.find({"State_Name" : "payload"})
-    console.log(state)
-
+    const payload= req.body.payload;
+    const city = await CD
+    .find({State: payload},"District")
+    .distinct("District")
+    res.send(city)
   }
   catch (e) {
     console.log(e) 
   }
 })
-
-
-
-
-
-
-
-
-
 
 app.listen(port, () => {
   console.log(`listening to PORT at: ${port}`);

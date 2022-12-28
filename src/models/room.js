@@ -6,7 +6,7 @@ const cdSchema = new mongoose.Schema(
        College_name : {
         type: String,
        },
-       State_name:{
+       State:{
         type:String , 
        },
        District_name:{
@@ -18,8 +18,5 @@ const cdSchema = new mongoose.Schema(
 
 // Database Model  - Collection creating 
 const CD = new mongoose.model('cd', cdSchema);
-
-
-
-
 module.exports = CD; 
+

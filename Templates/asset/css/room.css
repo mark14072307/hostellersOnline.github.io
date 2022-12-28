@@ -43,8 +43,8 @@ to {
     
 }
 .box{
-    border-radius: 5px;
-    padding: 30px 30px;
+    border-radius: 9px;
+    padding: 30px 70px;
     background: rgba(136, 135, 135, 0.092);
     backdrop-filter: blur(2.5px);
     box-shadow: 5px 4px 10px rgba(70, 70, 70, 0.293); 
@@ -56,6 +56,11 @@ border-radius: 5px;
 background-color: white;
 
 }
+#submit:hover{
+  background-color: rgb(226, 226, 226);
+
+}
+
 .container-item p{
 margin: 10px 0px;
 }

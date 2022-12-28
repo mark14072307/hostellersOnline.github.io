@@ -14,21 +14,26 @@
 <div class="container">
 <div class="box">
 <h2>Find your perfect Rental Room</h2>
+
 <div class="container-item">
-<p>State Your College State </p>
-<select name="state" id="StateResult" onchange= "sendData(this , CityResult)" >
+<p>Select Your College State </p>
+<select name="state" id="State" onchange="sendData(this)" >
 <option value="">Select State</option>
 </select>
 </div>
+
+
 <div class="container-item">
 <p>Select Your College City</p>
     <select name="city" id="CityResult">
  <option value="">Select City</option>  
 </select>
 </div>
+
+
 <div class="container-item">
 <p>Select Your College</p>
-    <select name="state" id="#">
+    <select name="state" id="CollegeResult">
  <option value="">Select College</option> 
 </select>
 </div>
@@ -51,13 +56,13 @@
 
 
 <script>
-    const StateResult =document.getElementById('StateResult');
+    const StateResult = document.getElementById('State');
 window.onload = function(){
     fetch('getState', {
         method:'POST'
     }).then(res => res.json()).then(data=>{
         if(data.length <1){
-            console.lop("Error")
+            console.log("Error")
         }
         data.forEach((item, index)=>{
             if(index>0) StateResult.innerHTML += `<option>${item}</option>`;
@@ -67,17 +72,28 @@ window.onload = function(){
     })
 }
 
-function sendData(e ,f){
-    fetch('getCity' , {
-        method: 'POST',
-        headers : {'Content-Type':'application/json'},
-        body: JSON.stringify({payload: e.value})
-    }).then(res=> res.json()).then(data=>{
-        let payload = data.payload;
-        console.log(payload);
+   const CityResult  = document.getElementById('CityResult');
+function sendData(e){
+    fetch('getCity',{
+        method:'POST',
+        headers: {'content-Type' : 'application/json'},
+        body : JSON.stringify({payload: e.value})
+    }).then(res => res.json()).then(data=>{
+        if(data.length <1){
+            console.log("Error")
+        }                                           
+        data.forEach((item2, index)=>{
+            if(index>0) CityResult.innerHTML += `<option>${item2}</option>`;
+
+        })
+        return;
     })
-    
 }
+
+
+
+ 
+
 </script>
 </body>
 </html> 
