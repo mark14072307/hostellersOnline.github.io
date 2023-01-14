@@ -1,4 +1,3 @@
-
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -11,8 +10,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 require("./src/db/mongo")
 const CD = require("./src/models/room")
 const Student = require("./src/models/user");
-require("./src/models/room")
-
 
 app.use(express.json())
 
@@ -25,92 +22,74 @@ app.set("views", tempPath);
 hbs.registerPartials(partialsPath);
 
 app.get("", (req, res) => {
-  res.render("index", {
-    ActiveHome: "font-size: 18px; text-shadow: 2px 2px #410361;"
-  })
+res.render("index", {
+ActiveHome: "font-size: 18px; text-shadow: 2px 2px #410361;"
+})
 });
 
 app.get("/about", (req, res) => {
-
-  res.render("about", {
-    ActiveAbout: "font-size: 18px; text-shadow: 2px 2px #410361;"
-  });
+res.render("about", {
+ActiveAbout: "font-size: 18px; text-shadow: 2px 2px #410361;"
+});
 });
 
 app.get("/services", (req, res) => {
-  res.render("services", {
-    ActiveServices: "font-size: 18px; text-shadow: 2px 2px #410361;"
-  })
+res.render("services", {
+ActiveServices: "font-size: 18px; text-shadow: 2px 2px #410361;"
+})
 });
 
 app.get("/login", (req, res) => {
-  res.render("login", {
-    ActiveLogin: "font-size: 18px; text-shadow: 2px 2px #410361;"
-  })
+res.render("login", {
+ActiveLogin: "font-size: 18px; text-shadow: 2px 2px #410361;"
+})
 });
 
 app.get("/signup", (req, res) => {
-  res.render("signup", {
-    ActiveSignup: "font-size: 18px; text-shadow: 2px 2px #410361;"
-  })
+res.render("signup", {
+ActiveSignup: "font-size: 18px; text-shadow: 2px 2px #410361;"
+})
 });
 
 app.get("/mess", (req, res) => {
-  res.render("mess")
+res.render("mess")
 });
 
 app.get("/room", (req, res) => {
-  res.render("room");
+res.render("room");
 });
 
 app.get('*', (req, res) => {
-  res.render("error")
-})
-
-
+res.render("error")
+});
 
 app.post('/users', async (req, res) => {
-  try {
-    const user = new Student(req.body)
-    const createUser = await user.save();
-    res.render("signupsuccess").send(createUser);
+try {
+const user = new Student(req.body)
+const createUser = await user.save();
+res.render("signupsuccess").send(createUser);
 
-  } catch (e) {
-    res.render("signup", {
-      invalid: e,
-      email: req.body.Email,
-      ActiveSignup: "font-size: 18px; text-shadow: 2px 2px #410361;"
-    })
-  }
+} catch (e) {
+res.render("signup", {
+invalid: e,
+email: req.body.Email,
+ActiveSignup: "font-size: 18px; text-shadow: 2px 2px #410361;"
 })
-
-
-app.post("/getState", async (req, res) => {
-  try {
-    const result = await CD
-      .distinct("State")
-    // const states = JSON.parse(result)
-    res.send(result)
-  }
-  catch (e) {
-    console.log(e)
-  }
-})
-
-
-app.post("/getCity", async (req, res) => {
-  try {
-    const payload= req.body.payload;
-    const city = await CD
-    .find({State: payload},"District")
-    .distinct("District")
-    res.send(city)
-  }
-  catch (e) {
-    console.log(e) 
-  }
-})
-
-app.listen(port, () => {
-  console.log(`listening to PORT at: ${port}`);
+}
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+  app.listen(port, () => {
+  console.log("Server is up on port " + port)
+  });

@@ -3,13 +3,13 @@ const mongoose = require("mongoose")
 // Database Scheme - collection structure 
 const cdSchema = new mongoose.Schema(
     {
-       College_name : {
+       College: {
         type: String,
        },
        State:{
         type:String , 
        },
-       District_name:{
+       District:{
         type: String, 
        }
 
